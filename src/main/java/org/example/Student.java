@@ -1,8 +1,12 @@
+package org.example;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
 @Entity
 
 public class Student {
+    @Id
     private int id;
     private String name;
     private double marks;
@@ -39,7 +43,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
+        return "org.example.Student [id=" + id + ", name=" + name + ", marks=" + marks + "]";
     }
 
 }

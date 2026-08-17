@@ -1,4 +1,4 @@
-
+package org.example;
 //    Configuration file is a class which is present in org.hibernate.cfg package
 //    -it activates the hibernate framework
 //    -it reads both configuration file and mapping file
@@ -12,19 +12,16 @@
 //
 
 
-
-
-import com.mysql.cj.xdevapi.SessionFactory;
-
-import java.lang.module.Configuration;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 
 
 public class hibernate_util {
     private static final SessionFactory sessionFactory = buildSessionFactory();
 
-    private static SessionFactory buildSessionFactory() {
+    public static SessionFactory buildSessionFactory() {
         try{
-            return new Configuration().configure("hibernate.cfg.xml").addAnnotedClass(Student.class).buildSessionFactory();
+            return new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
         }
         catch(Throwable e){
             throw new ExceptionInInitializerError(e);
