@@ -1,30 +1,26 @@
-<!DOCTYPE hibernate-configuration PUBLIC
-        "-//Hibernate/Hibernate Configuration DTD 5.3//EN"
-        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
 <hibernate-configuration> <!-- ->Root element of configuration file-->
     <session-factory><!-- this section contains various properties and mapping specific to the hibernate -->
 <!--        DB configuration-->
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="connection.url">jdbc-mysql://localhost:3306/firstjdbcproject</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/firstjdbcproject</property>
         <property name="connection.username">root</property>
         <property name="connection.password">Mbh@250504</property>
+
 
 <!--        Dialect configuration-->
 <!--        which is necessary to generate appropriate SQL statements-->
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
 <!--        This Automatically create or update schema-->
         <property name="hbm2ddl.auto">create</property>
-
 <!--        Enable or disable Showing AQL statements in the console-->
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
-
-<!--        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcahe.EhCacheregion-Factory</property>-->
-<!--        <property name="hibernate.cache.use_second_level_cache">true</property>-->
-
 <!--        Specify yhe package where entity are location -->
         <mapping class="org.example.Student"/>
+        <mapping class="org.example.Employee"/>
+        <mapping class="org.example.Address"/>
     </session-factory>
 
 </hibernate-configuration>
