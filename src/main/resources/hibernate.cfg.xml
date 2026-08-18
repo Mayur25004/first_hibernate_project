@@ -4,8 +4,8 @@
 <hibernate-configuration> <!-- ->Root element of configuration file-->
     <session-factory><!-- this section contains various properties and mapping specific to the hibernate -->
 <!--        DB configuration-->
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc-mysql-//localhost:3306/firstjdbcproject</property>
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc-mysql://localhost:3306/firstjdbcproject</property>
         <property name="connection.username">root</property>
         <property name="connection.password">Mbh@250504</property>
 
@@ -18,11 +18,13 @@
 <!--        Enable or disable Showing AQL statements in the console-->
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>
-        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcahe.EhCacheregion-Factory</property>
-        <property name="hibernate.cache.use_second_level_cache">true</property>
+
+
+<!--        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcahe.EhCacheregion-Factory</property>-->
+<!--        <property name="hibernate.cache.use_second_level_cache">true</property>-->
 
 <!--        Specify yhe package where entity are location -->
-        <mapping class="com.af.first_hibernate_project.Student"/>
+        <mapping class="org.example.Student"/>
     </session-factory>
 
 </hibernate-configuration>

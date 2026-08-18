@@ -34,6 +34,9 @@ public class Student {
         this.marks = marks;
     }
 
+    public Student(){
+
+    }
     public Student(int id, String name, double marks) {
         super();
         this.id = id;
